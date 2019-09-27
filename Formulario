@@ -40,7 +40,63 @@
     <button type="submit">Enviar</button>
     
 
+// ingrese 3 numero y que retorne cual es el mayor
 
+archivo php 
+<?php
+ 
+ 
+
+ if(isset($_POST ["numero1"])== false  isset($_POST ["numero2"])== false && isset($_POST ["numero3"]) == false ){
+
+ 	echo "no me mandaste lo necesario";
+ 	die();
+ }
+
+if(empty($_POST ["numero1"])== false && isset($_POST ["numero2"])== false && isset($_POST ["numero3"]) == true){
+
+	echo "no enviaste la edad";
+	die();
+}else {
+	$numero1 = $_POST ["numero1"]
+	$numero2 = $_POST ["numero2"]
+	$numero3 = $_POST ["numero3"]
+
+	if(numero1 > numero2 && numero1 > numero3){
+		echo "numero1 es el mayor";
+	} else if(numero2 > numero1 && numero2 > numero3){
+		echo "numero2 es mayor";
+	}else if(numero3 > numero1 && numero3 > numero1){
+		echo "numero 3 es el mayor";
+	}
+}
+
+ 
+
+ ?>
+ 
+ 
+ //archivo html
+ <html>
+<head>
+</head>
+<body>
+<form method="POST" action="numeros.php">
+    <label>ingrese el primer numero</label>
+    <input type="text" name="numero1">
+    <button type="submit">Enviar</button>
+    <label>ingrese el segundo numero</label>
+    <input type="text" name="numero2">
+    <button type="submit">Enviar</button>
+    <label>ingrese el tercer numero</label>
+    <input type="text" name="numero3">
+    <button type="submit">Enviar</button>
+    
+
+
+</form>
+</body>
+</html>
 </form>
 </body>
 </html>

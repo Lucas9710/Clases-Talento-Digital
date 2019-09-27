@@ -25,3 +25,44 @@
  echo $tempF;
 
 ?>
+
+//formulario que solicita fecha de nacimiento y devuelve si es menor o mayor de edad
+
+//archivo html
+
+<html>
+<head>
+</head>
+<body>
+<form method="POST" action="anoDeNacimiento.php">
+    <label>ingrese el año de nacimiento</label>
+    <input type="text" name="a">
+    <button type="submit">Enviar</button>
+    
+
+
+</form>
+</body>
+</html>
+
+//archivo php
+
+<?php
+
+ $a= $_POST["a"];
+
+
+
+ if($a < 2001){
+
+ 	echo "es mayor";
+ }else {
+ 	echo "es menor";
+ }
+
+ 
+
+
+
+
+?>

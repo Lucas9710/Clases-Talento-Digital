@@ -1,0 +1,27 @@
+//Hacer un formulario que pase temperatura celsius a farenheit
+
+//archivo html
+
+<html>
+<head>
+</head>
+<body>
+<form method="POST" action="transformar.php">
+    <label>ingrese tempratura en celsius</label>
+    <input type="text" name="gradosCelsius">
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>
+
+//archivo php
+
+<?php
+
+ $tempC= $_POST["gradosCelsius"];
+
+ $tempF = $tempC * 1.8 + 32;
+
+ echo $tempF;
+
+?>

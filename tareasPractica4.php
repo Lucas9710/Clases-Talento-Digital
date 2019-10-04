@@ -1,3 +1,4 @@
+//genera un archivo php que muestre todas las tareas
 <?php
 
 $conexion = mysqli_connect("localhost", "root", "", "tareas");

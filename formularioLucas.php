@@ -6,6 +6,13 @@ if(!isset($_POST["realizada"])){
 }
 
 $tareaIngresada = $_POST["tarea"];
+$largoDeTarea = strlen($tareaIngresada);
+
+if($largoDeTarea == 0){
+ echo "<br> 
+ no ingresaste nada
+ </br";
+}
 //$realizada = $_POST["realizada"];
 
 if($_POST["realizada"] == "1"){
@@ -19,7 +26,7 @@ $sql = "INSERT into tareas (estado,nombre)values ('$realizada', '$tareaIngresada
 
 $respuesta = mysqli_query($conexion, $sql);
 
-if($respuesta == true){
+if($respuesta == true && $largoDeTarea != 0 ){
 	echo "se realizo correctamente";
 }
 else {

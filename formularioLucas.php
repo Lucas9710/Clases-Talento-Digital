@@ -4,7 +4,7 @@ $conexion = mysqli_connect("localhost:3307", "root", "", "todo");
 if(!isset($_POST["realizada"])){
 	die();
 }
-
+$fecha = DATE("d/m/y");
 $tareaIngresada = $_POST["tarea"];
 $largoDeTarea = strlen($tareaIngresada);
 
@@ -21,7 +21,7 @@ if($_POST["realizada"] == "1"){
 else {
 	$realizada = "";
 }
-$sql = "INSERT into tareas (estado,nombre)values ('$realizada', '$tareaIngresada') ";
+$sql = "INSERT into tareas (estado,nombre,horario)values ('$realizada', '$tareaIngresada', '$fecha') ";
 
 
 $respuesta = mysqli_query($conexion, $sql);

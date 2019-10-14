@@ -21,7 +21,7 @@ if($_POST["realizada"] == "1"){
 else {
 	$realizada = "";
 }
-$sql = "INSERT into tareas (estado,nombre,horario)values ('$realizada', '$tareaIngresada', '$fecha') ";
+$sql = "INSERT into tareas (estado,nombre,fecha)values ('$realizada', '$tareaIngresada', '$fecha') ";
 
 
 $respuesta = mysqli_query($conexion, $sql);

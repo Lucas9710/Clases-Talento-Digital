@@ -5,7 +5,7 @@
 
 
  $conexion = mysqli_connect("localhost", "root", "", "tododb");
-$sql = "SELECT* FROM tareas WHERE nombre LIKE '%$filtro%'";
+$sql = "SELECT* FROM tareas WHERE tarea LIKE '%$filtro%'";
 $respuesta= mysqli_query($conexion, $sql);
 
 

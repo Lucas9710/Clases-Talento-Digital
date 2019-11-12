@@ -1,0 +1,39 @@
+class posteosController extends Controller
+{
+    public function store (Request $request){
+        $obj = new posteos();   
+        $obj -> post = $request -> post;
+        $obj -> fecha = $request -> fecha;
+        $obj -> estados_animo_id = $request -> estados_animo_id;
+
+       
+        $obj -> save();
+        return $obj;
+    }
+
+       
+    public function destroy($id) {
+        $obj = posteos::find($id);
+        $obj -> delete();
+        
+    }
+
+
+
+       public function  actualizar (Request $request, $id){
+        $obj = posteos::find($id);
+        $obj -> post = $request -> post;
+        $obj -> fecha = $request -> fecha;
+        $obj -> estados_animo_id = $request -> estados_animo_id;
+        $obj -> save();
+        return $obj;
+       }  
+
+
+       public function listar (request $request){
+        //return posteos:: all();
+        return  posteos::with('estadoDeAnimo')->get();
+
+    }
+    }
+

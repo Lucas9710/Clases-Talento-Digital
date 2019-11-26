@@ -21,18 +21,26 @@ app.get('/prueba', function(req, res){
 });
 
 app.post('/persona', function(req, res){
+    var errores = [];
   if(!req.body.nombre || req.body.nombre == " "){
-    res.send("falte el nombre");
+    errores.push("falta el nombre");
   }
   if(!req.body.apellido || req.body.apellido == " "){
-    res.send("falte el apellido");
+    errores.push("falta el apellido");
   }
 
   if(!req.body.edad || req.body.edad < 1){
-    res.send("la edad no es valida");
+   errores.push("falta la edad");
   }
 
-  res.send("ok");
+  if(errores.length> 0){
+    res.render('error.hbs',{errores});
+  }
+    var nombre = req.body.nombre;
+    var apellido = req.body.apellido;
+    var edad = req.body.edad;
+    
+    res.render('registroExitoso.hbs',{nombre}, {apellido}, {edad});
 });
 
 app.listen(3000, function(){
